@@ -4,8 +4,7 @@ services:
 env:
   global:
     - REGISTRY_USER=anchal72
-    # REGISTRY_PASS=...
-    - secret: "harshita#070299"
+    - REGISTRY_PASS=harshita#070299
 script:
   - docker build -t webserver .
   - docker run -it webserver
