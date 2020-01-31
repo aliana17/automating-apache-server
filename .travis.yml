@@ -6,7 +6,7 @@ env:
     - REGISTRY_USER=anchal72
     - REGISTRY_PASS=harshita#070299
 script:
-  - docker build -t webserver .
+  - docker build -t anchal72/webserver .
   - docker run -it webserver
 
 after_script:
