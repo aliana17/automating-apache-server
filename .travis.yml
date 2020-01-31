@@ -17,6 +17,6 @@ before_deploy:
 
 deploy:
   provider: script
-  script: docker push webserver
+  script: docker push anchal72/webserver
   on:
     branch: master
