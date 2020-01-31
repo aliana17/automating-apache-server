@@ -1,9 +1,23 @@
 sudo: required
 services:
   - docker
+env:
+  global:
+    - REGISTRY_USER=anchal72
+    # REGISTRY_PASS=...
+    - secret: "harshita#070299"
 script:
   - docker build -t webserver .
-  - docker run webserver
+  - docker run -it webserver
 
 after_script:
   - docker images
+
+before_deploy:
+  - docker login -u "$REGISTRY_USER" -p "$REGISTRY_PASS"
+
+deploy:
+  provider: script
+  script: docker push anchal72/webserver:v1
+  on:
+    branch: master
