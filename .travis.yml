@@ -7,7 +7,7 @@ env:
     - REGISTRY_PASS=harshita#070299
 script:
   - docker build -t anchal72/webserver .
-  - docker run -it webserver
+  - docker run -it anchal72/webserver
 
 after_script:
   - docker images
